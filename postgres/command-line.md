@@ -1,0 +1,17 @@
+# Command Line
+
+Login to your system as user postgres and connect the database.
+
+```text
+$ psql
+psql (13.2 (Debian 13.2-1.pgdg110+1))
+Type "help" for help.
+```
+
+To check login info use following command from the database command prompt.
+
+```text
+postgres=# \conninfo
+You are connected to database "postgres" as user "postgres" via socket in "/var/run/postgresql" at port "5432".
+```
+

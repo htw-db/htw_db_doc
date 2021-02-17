@@ -94,5 +94,11 @@ Add the following line
 host    all     postgres        all         md5
 ```
 
+The service need be restarted
+
+```text
+systemctl restart postgresql
+```
+
 
 
