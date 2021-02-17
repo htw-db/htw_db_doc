@@ -80,7 +80,7 @@ iptables -A INPUT -p tcp -s 0.0.0.0/0 --dport 5432 -m conntrack --ctstate NEW,ES
 iptables -A OUTPUT -p tcp --sport 5432 -m conntrack --ctstate ESTABLISHED -j ACCEPT
 ```
 
-### Client authentication
+### Client authentication with LDAP
 
 Client authentication is controlled by a configuration file. which is named pg\_hba.conf
 
@@ -91,7 +91,7 @@ nano /etc/postgresql/13/main/pg_hba.conf
 Add the following line
 
 ```text
-host    all     postgres        all         md5
+host    all   all     all  ldap ldapscheme="ldaps" ldapserver="login-dc-01.login.htw-berlin.de" ldapprefix="cn=" ldapsuffix=", ou=idmusers,dc=login,dc=htw-berlin,dc=de" ldapport=636
 ```
 
 The service need be restarted
