@@ -1,25 +1,4 @@
-# Initial page
-
-## Deployment
-
-Becoming a super hero is a fairly straight forward process:
-
-```
-$ give me super-powers
-```
-
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-{% endcode %}
+# Deployment
 
 ## PostgreSQL 
 
@@ -54,11 +33,17 @@ Install the latest version of PostgreSQL
 sudo apt-get -y install postgresql
 ```
 
-Start the database server using
+The service is usually started after installation.
 
 ```text
- pg_ctlcluster 13 main start
+systemctl status postgresql
 ```
 
+After installing the PostgreSQL database server by default, it **creates a user postgres** with role postgres. It also creates a system account with the same name postgres. So to connect to postgres server, login to your system as user postgres and connect the database.
 
+```text
+su - postgres
+psql -c "alter user postgres with password 'StrongDBPassword'"
+ALTER ROLE
+```
 
