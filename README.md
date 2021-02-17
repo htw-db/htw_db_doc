@@ -47,3 +47,52 @@ psql -c "alter user postgres with password 'StrongDBPassword'"
 ALTER ROLE
 ```
 
+### Enable remote access
+
+By default, access to PostgreSQL database server is only from localhost. Edit PostgreSQL configuration file if you want to change listening address. 
+
+```text
+nano /etc/postgresql/13/main/postgresql.conf
+```
+
+Add the line under connections and authentication
+
+```text
+listen_addresses = '*' 
+```
+
+Restart postgresql service to enable changes
+
+```text
+sudo systemctl restart postgresql
+```
+
+Add iptables rules
+
+```text
+nano firewall.sh
+```
+
+PostgreSQL listens for client connections on port 5432.  To allow incoming PostgreSQL connections from a specific IP address or subnet
+
+```text
+iptables -A INPUT -p tcp -s 0.0.0.0/0 --dport 5432 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+iptables -A OUTPUT -p tcp --sport 5432 -m conntrack --ctstate ESTABLISHED -j ACCEPT
+```
+
+### Client authentication
+
+Client authentication is controlled by a configuration file. which is named pg\_hba.conf
+
+```text
+nano /etc/postgresql/13/main/pg_hba.conf
+```
+
+Add the following line
+
+```text
+host    all     postgres        all         md5
+```
+
+
+
