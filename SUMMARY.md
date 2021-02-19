@@ -6,7 +6,7 @@
 
 * [Postgres](postgres/postgres/README.md)
   * [Deployment](postgres/postgres/deployment.md)
-  * [Insights](postgres/postgres/insights.md)
+  * [Understand the workflow](postgres/postgres/understand-the-workflow.md)
 
 ## Frontend
 

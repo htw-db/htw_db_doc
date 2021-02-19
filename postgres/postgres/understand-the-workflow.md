@@ -1,4 +1,4 @@
-# Insights
+# Understand the workflow
 
 ## Gathering general information
 
@@ -58,7 +58,7 @@ postgres=# \l
            |          |           |         |       | postgres=CTc/postgres
 ```
 
-## Understanding the workflow
+## The actual workflow
 
 Authentication takes place via LDAP. So that these users are all assigned to one group. This group has already been created in the deployment in the form of a role.
 
