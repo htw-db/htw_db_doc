@@ -7,6 +7,8 @@
 * [Postgres](postgres/postgres/README.md)
   * [Deployment](postgres/postgres/deployment.md)
   * [Understand the workflow](postgres/postgres/understand-the-workflow.md)
+* [Apache HTTP Server](postgres/apache-http-server.md)
+* [phpPgAdmin](postgres/phppgadmin.md)
 
 ## Frontend
 
