@@ -67,12 +67,34 @@ postgres=# CREATE ROLE ldap_users;
 CREATE ROLE
 ```
 
-When a user authenticates for the first time, a new role is created in the database and added to that specific group.
+When a user authenticates for the first time, a new role is created in the database and added to that specific group. `CONNECTION LIMIT` specifies the number of concurrent connections a role can make.
 
 ```text
 postgres=# CREATE ROLE s0558151 WITH NOSUPERUSER LOGIN CONNECTION LIMIT 10 IN ROLE ldap_users;
 CREATE ROLE
 ```
 
+Lets verify that we added a role to a specific group
 
+```text
+postgres=# \du
+                                     List of roles
+ Role name  |                         Attributes                         |  Member of
+------------+------------------------------------------------------------+--------------
+ ldap_users | Cannot login                                               | {}
+ postgres   | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+ s0558151   | 10 connections 
+```
+
+As soon as a user creates a database, the following command is executed. The user is entered as the owner of the database.
+
+```text
+ CREATE DATABASE s0558151_firstdb WITH OWNER s0558151;
+```
+
+If the user deletes his database, the following command will be executed.
+
+```text
+DROP DATABASE IF EXISTS s0558151_firstdb;
+```
 
