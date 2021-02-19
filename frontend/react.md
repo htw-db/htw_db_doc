@@ -46,3 +46,33 @@ Move build files to apache
 cp -r build/* /var/www/html
 ```
 
+## Change VirtualHost configuration
+
+Make sure that RewriteEngine is running
+
+```text
+sudo a2enmod rewrite
+```
+
+Add lines to enable RewriteEngine
+
+```text
+nano /etc/apache2/sites-enabled/000-default.conf
+
+<Directory "/var/www/html">
+    RewriteEngine on
+    # Don't rewrite files or directories
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+    # Rewrite everything else to index.html to allow html5 state links
+    RewriteRule ^ index.html [L]
+</Directory>
+```
+
+Restart apache2 to reload configurations
+
+```text
+systemctl restart apache2
+```
+
