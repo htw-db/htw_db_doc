@@ -1,5 +1,7 @@
 # React
 
+## Deployment
+
 Install nodejs and NPM
 
 ```text
@@ -40,5 +42,7 @@ npm run build
 
 Move build files to apache
 
-
+```text
+cp -r build/* /var/www/html
+```
 
