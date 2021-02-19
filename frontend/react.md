@@ -46,7 +46,7 @@ Move build files to apache
 cp -r build/* /var/www/html
 ```
 
-## Change VirtualHost configuration
+## Handling React Routes with Apache
 
 Make sure that RewriteEngine is running
 
