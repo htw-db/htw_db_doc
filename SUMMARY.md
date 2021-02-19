@@ -6,7 +6,7 @@
 
 * [Postgres](postgres/postgres/README.md)
   * [Deployment](postgres/postgres/deployment.md)
-  * [Command Line Interface](postgres/postgres/command-line.md)
+  * [Insights](postgres/postgres/insights.md)
 
 ## Frontend
 
