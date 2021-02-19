@@ -15,3 +15,15 @@ postgres=# \conninfo
 You are connected to database "postgres" as user "postgres" via socket in "/var/run/postgresql" at port "5432".
 ```
 
+List users alias roles
+
+```text
+postgres=# \du
+                                   List of roles
+ Role name |                         Attributes                         | Member of
+-----------+------------------------------------------------------------+-----------
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+```
+
+
+
