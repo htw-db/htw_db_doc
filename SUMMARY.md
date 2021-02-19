@@ -1,12 +1,17 @@
 # Table of contents
 
 * [Deployment](README.md)
+* [Getting Started](getting-started.md)
+
+## Frontend
+
+* [React](frontend/react.md)
 
 ## Postgres
 
 * [Command Line](postgres/command-line.md)
 
-## Frontend
+## Backend
 
-* [React](frontend/react.md)
+* [Play Framework](backend/play-framework.md)
 
