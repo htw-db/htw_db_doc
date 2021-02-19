@@ -1,4 +1,6 @@
 # Getting Started
 
-First words here
+This project is divided in DevOps, Frontend and Backend. 
+
+
 
